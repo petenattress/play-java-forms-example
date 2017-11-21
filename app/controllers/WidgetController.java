@@ -39,7 +39,7 @@ public class WidgetController extends Controller {
     }
 
     public Result listWidgets() {
-        return ok(views.html.listWidgets.render(asScala(widgets), form));
+        return ok(views.html.listWidgets.render(asScala(widgets), form)).withHeader("Cache-Control", "no-store");
     }
 
     public Result createWidget() {
